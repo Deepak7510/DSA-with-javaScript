@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+
+
+
+// 7. Hollow square (n=5)
+//    *****
+//    *   *
+//    *   *
+//    *   *
+//    *****
+
+
+
+const n=5
+
+
+for(let i=1;i<=n;i++){
+    for(let j=1;j<=n;j++){
+        if(i>1 && i<n && j>1 && j<n){
+            document.write("&nbsp;&nbsp;");
+        }else{
+            document.write("*")
+        }
+}
+
+document.write("<br/>")
+
+}
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=4, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+const arr=[10,20,30,40,50];
+const newElement=60;
+const position=3;
+
+for(let i=arr.length-1;i>=position;i--){
+    if(i>=position){
+        arr[i+1]=arr[i];
+        if(i===position){
+            arr[i]=newElement;
+        }
+    }
+}
+
+console.log(arr)
+
+    </script>
+</body>
+</html>

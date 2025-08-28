@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 10. Alphabet triangle (n=5)
+      //    A
+      //    B C
+      //    D E F
+      //    G H I J
+      //    K L M N O
+
+
+      let n=65;
+
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            document.write(String.fromCharCode(n))
+            n++
+        }
+
+        document.write("<br/>");
+      }
+    </script>
+  </body>
+</html>
