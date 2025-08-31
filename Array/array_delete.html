@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +8,16 @@
 </head>
 <body>
 
-
     <script>
+const arr=[10,20,30,40,50];
+const deleteIndex=2;
 
-// 2. Right-angled triangle (n=5)
-//    *
-//    **
-//    ***
-//    ****
-//    *****
-
-const n=5
-for(let i=1;i<=n;i++){
-    for(let j=1;j<=i;j++){
-        document.write("*");
-    }
-    document.write("<br/>")
+for(let i=2;i<arr.length;i++){
+    arr[i]=arr[i+1]
 }
+arr.length=arr.length-1
+
+console.log(arr)
 
     </script>
     

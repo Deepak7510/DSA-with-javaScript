@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Pattern Printing Questions with Shapes (Basic to Advanced)
+
+      // BASIC LEVEL:
+      // 1. Square of stars (n=4)
+      //    ****
+      //    ****
+      //    ****
+      //    ****
+
+      {
+        const n = 5;
+
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= n; j++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+      }
+
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 2. Right-angled triangle (n=5)
+      //    *
+      //    **
+      //    ***
+      //    ****
+      //    *****
+      // rmdir .git /s /q
+
+      {
+        const n = 5;
+
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 3. Inverted right-angled triangle (n=5)
+      //    *****
+      //    ****
+      //    ***
+      //    **
+      //    *
+
+      {
+        const n = 5;
+
+        for (let i = n; i >= 1; i--) {
+          for (let j = 1; j <= i; j++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 4. Pyramid of stars (n=5)
+      //        *
+      //       ***
+      //      *****
+      //     *******
+      //    *********
+
+      {
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 5; j > i; j--) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            document.write("*");
+          }
+
+          document.write("<br/>");
+        }
+      }
+
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 5. Inverted pyramid (n=5)
+      //    *********
+      //     *******
+      //      *****
+      //       ***
+      //        *
+
+      {
+        const n = 5;
+
+        for (let i = n; i >= 1; i--) {
+          for (let j = n; j > i; j--) {
+            document.write("&nbsp;&nbsp");
+          }
+
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // INTERMEDIATE LEVEL:
+      // 6. Diamond pattern (n=5)
+      //        *
+      //       ***
+      //      *****
+      //       ***
+      //        *
+
+      {
+        const n = 5;
+
+        for (let i = 1; i <= Math.floor(n / 2) + 1; i++) {
+          for (let j = Math.floor(n / 2) + 1; j > i; j--) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (let j = 1; j <= 2 * i - 1; j++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+
+        for (let i = Math.floor(n / 2); i >= 1; i--) {
+          for (let j = Math.floor(n / 2); j >= i; j--) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (let j = 1; j <= 2 * i - 1; j++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 7. Hollow square (n=5)
+      //    *****
+      //    *   *
+      //    *   *
+      //    *   *
+      //    *****
+
+      {
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= n; j++) {
+            if (i > 1 && i < n && j > 1 && j < n) {
+              document.write("&nbsp;&nbsp");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 8. Hollow pyramid (n=5)
+      //        *
+      //       * *
+      //      *   *
+      //     *     *
+      //    *********
+
+      {
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+          for (let k = i; k < n; k++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let j = 1; j <= 2 * i - 1; j++) {
+            if (i > 1 && i < n && j > 1 && j < 2 * i - 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 9. Floyd’s triangle (n=5)
+      //    1
+      //    2 3
+      //    4 5 6
+      //    7 8 9 10
+      //    11 12 13 14 15
+
+      {
+        const n = 5;
+        let count = 1;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            document.write(count + " ");
+            count++;
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 10. Alphabet triangle (n=5)
+      //    A
+      //    B C
+      //    D E F
+      //    G H I J
+      //    K L M N O
+
+      {
+        const n = 5;
+        let count = 65;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            document.write(String.fromCharCode(count) + " ");
+            count++;
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 11. Half pyramid with numbers (n=5)
+      //    1
+      //    12
+      //    123
+      //    1234
+      //    12345
+
+      {
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            document.write(j);
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 12. Inverted half pyramid with numbers (n=5)
+      //    12345
+      //    1234
+      //    123
+      //    12
+      //    1
+
+      {
+        const n = 5;
+        for (let i = n; i >= 1; i--) {
+          for (let j = 1; j <= i; j++) {
+            document.write(j);
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 13. Triangle with repeated row numbers (n=5)
+      //    1
+      //    22
+      //    333
+      //    4444
+      //    55555
+
+      {
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            document.write(i);
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 14. Binary triangle (n=5)
+      //    1
+      //    01
+      //    101
+      //    0101
+      //    10101
+
+      // 15. Hollow diamond (n=5)
+      //        *
+      //       * *
+      //      *   *
+      //       * *
+      //        *
+
+      {
+        const n = 5;
+
+        for (let i = 1; i <= Math.floor(n / 2) + 1; i++) {
+          for (k = i; k < Math.floor(n / 2) + 1; k++) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (k = 1; k <= 2 * i - 1; k++) {
+            if (i > 1 && k > 1 && k < 2 * i - 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+
+        for (let i = Math.floor(n / 2); i >= 1; i--) {
+          for (k = i; k <= Math.floor(n / 2); k++) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (k = 1; k <= 2 * i - 1; k++) {
+            if (i === Math.floor(n / 2) && k > 1 && k < 2 * i - 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // ADVANCED LEVEL:
+      // 16. Pascal’s triangle (n=5)
+      //        1
+      //       1 1
+      //      1 2 1
+      //     1 3 3 1
+      //    1 4 6 4 1
+
+      // 17. Butterfly pattern (n=4)
+      //    *      *
+      //    **    **
+      //    ***  ***
+      //    ********
+      //    ********
+      //    ***  ***
+      //    **    **
+      //    *      *
+
+      {
+        const n = 4;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            document.write("*");
+          }
+
+          for (let k = i; k < n; k++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = i; k < n; k++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let j = 1; j <= i; j++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+
+        for (let i = n; i >= 1; i--) {
+          for (let j = 1; j <= i; j++) {
+            document.write("*");
+          }
+
+          for (let k = n; k > i; k--) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (let k = n; k > i; k--) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (let j = 1; j <= i; j++) {
+            document.write("*");
+          }
+
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 18. Hollow diamond inside a square (n=7)
+      //    *******
+      //    **   **
+      //    * * * *
+      //    *  *  *
+      //    * * * *
+      //    **   **
+      //    *******
+
+      {
+        const n = 7;
+
+        for (let i = Math.floor(n / 2) + 1; i >= 1; i--) {
+          for (let j = i; j < Math.floor(n / 2) + 1; j++) {
+            if (i < Math.floor(n / 2) + 1 - 1 && j > i) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            if (i > 1 && i < Math.floor(n / 2) + 1 && k > 1 && k < 2 * i - 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+
+          for (let l = i; l < Math.floor(n / 2) + 1; l++) {
+            if (i < Math.floor(n / 2) + 1 - 1 && l < Math.floor(n / 2)) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+
+          document.write("<br/>");
+        }
+
+        for (let i = 1; i <= Math.floor(n / 2); i++) {
+          for (let j = i; j < Math.floor(n / 2); j++) {
+            if (i < Math.floor(n / 2) - 1 && j > 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+
+          for (let k = 1; k <= 2 * i + 1; k++) {
+            if (i < Math.floor(n / 2) && k > 1 && k < 2 * i + 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+
+          for (let j = i; j < Math.floor(n / 2); j++) {
+            if (i < Math.floor(n / 2) - 1 && j < Math.floor(n / 2) - 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 19. Spiral matrix (n=4)
+      //    1  2  3  4
+      //    12 13 14 5
+      //    11 16 15 6
+      //    10  9  8 7
+
+      // 20. Zigzag pattern (n=9)
+      //        *       *
+      //      *   *   *   *
+      //    *       *       *
+
+      {
+        const n = 9,
+          rows = 3;
+        for (let i = 1; i <= rows; i++) {
+          for (let j = 1; j <= n; j++) {
+            if ((i + j) % 4 === 0 || (i === 2 && j % 2 === 0)) {
+              document.write("*");
+            } else {
+              document.write("&nbsp;&nbsp;");
+            }
+          }
+          document.write("<br>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 21. Sandglass pattern (n=5)
+      //    *********
+      //     *******
+      //      *****
+      //       ***
+      //        *
+      //       ***
+      //      *****
+      //     *******
+      //    *********
+
+      {
+        const n = 9;
+
+        for (let i = Math.floor(n / 2) + 1; i >= 1; i--) {
+          for (let j = i; j < Math.floor(n / 2) + 1; j++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+
+        for (let i = 1; i <= Math.floor(n / 2); i++) {
+          for (let j = i; j < Math.floor(n / 2); j++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = 1; k <= 2 * i + 1; k++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 22. Hourglass pattern (n=5)
+      //    *********
+      //     *     *
+      //      *   *
+      //       * *
+      //        *
+      //       * *
+      //      *   *
+      //     *     *
+      //    *********
+
+      {
+        const n = 9;
+
+        for (let i = Math.floor(n / 2) + 1; i >= 1; i--) {
+          for (let j = i; j < Math.floor(n / 2) + 1; j++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            if (i > 1 && i < Math.floor(n / 2) + 1 && k > 1 && k < 2 * i - 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+
+        for (let i = 1; i <= Math.floor(n / 2); i++) {
+          for (let j = i; j < Math.floor(n / 2); j++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = 1; k <= 2 * i + 1; k++) {
+            if (i < Math.floor(n / 2) && k > 1 && k < 2 * i + 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 23. Concentric square numbers (n=4)
+      //    4444444
+      //    4333334
+      //    4322234
+      //    4321234
+      //    4322234
+      //    4333334
+      //    4444444
+
+      // 24. Chessboard pattern (n=8)
+      //    * * * *
+      //     * * * *
+      //    * * * *
+      //     * * * *
+      //    * * * *
+      //     * * * *
+      //    * * * *
+      //     * * * *
+
+      {
+        const n = 8;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= n; j++) {
+            if ((i + j) % 2 == 0) {
+              document.write("*");
+            } else {
+              document.write("&nbsp;&nbsp;");
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 25. Cross/X pattern (n=5)
+      //    *   *
+      //     * *
+      //      *
+      //     * *
+      //    *   *
+
+      {
+        const n = 5;
+
+        for (let i = Math.floor(n / 2) + 1; i >= 1; i--) {
+          for (let j = i; j < Math.floor(n / 2) + 1; j++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            if (i > 1 && k > 1 && k < 2 * i - 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+
+        for (let i = 1; i <= Math.floor(n / 2); i++) {
+          for (let j = i; j < Math.floor(n / 2); j++) {
+            document.write("&nbsp;&nbsp;");
+          }
+
+          for (let k = 1; k <= 2 * i + 1; k++) {
+            if (k > 1 && k < 2 * i + 1) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 26. Hollow right-angled triangle (n=5)
+      //    *
+      //    * *
+      //    *  *
+      //    *   *
+      //    *****
+
+      {
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            if (i > 1 && i < n && j > 1 && j < i) {
+              document.write("&nbsp;&nbsp;");
+            } else {
+              document.write("*");
+            }
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 27. Increasing number pyramid (n=5)
+      //    1
+      //    1 2
+      //    1 2 3
+      //    1 2 3 4
+      //    1 2 3 4 5
+
+      {
+        const n = 5;
+
+        for (let i = 1; i <= n; i++) {
+          for (let j = 1; j <= i; j++) {
+            document.write(j);
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 28. Decreasing number pyramid (n=5)
+      //    1 2 3 4 5
+      //    1 2 3 4
+      //    1 2 3
+      //    1 2
+      //    1
+
+      {
+        const n = 5;
+        for (let i = n; i >= 1; i--) {
+          for (let j = 1; j <= i; j++) {
+            document.write(j);
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 29. Alphabet pyramid (n=5)
+      //        A
+      //       ABC
+      //      ABCDE
+      //     ABCDEFG
+      //    ABCDEFGHI
+
+      {
+        const AlphabetNumber = 64;
+        const n = 5;
+        for (let i = 1; i <= n; i++) {
+          for (let j = i; j < n; j++) {
+            document.write("&nbsp;&nbsp");
+          }
+
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            document.write(String.fromCharCode(AlphabetNumber + k));
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+
+      // 30. Mirrored right-angled triangle (n=5)
+      //        *
+      //       **
+      //      ***
+      //     ****
+      //    *****
+
+      {
+        const n = 5;
+
+        for (let i = 1; i <= n; i++) {
+          for (let j = i; j < n; j++) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (let k = 1; k <= i; k++) {
+            document.write("*");
+          }
+          document.write("<br/>");
+        }
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+    </script>
+  </body>
+</html>
